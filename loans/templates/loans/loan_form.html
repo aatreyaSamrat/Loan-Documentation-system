@@ -1,0 +1,17 @@
+{% extends "loans/base.html" %}
+
+{% block content %}
+<head>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/styles_loanform.css' %}">
+</head>
+<div class="container">
+    <h2>Add New Loan</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

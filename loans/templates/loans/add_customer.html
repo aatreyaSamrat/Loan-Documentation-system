@@ -1,0 +1,28 @@
+{% extends "loans/base.html" %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles_base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_addcusto.css' %}">
+</head>
+
+<div class="add-customer-page">
+    <div class="add-customer-form">
+        <h2>Add Customer</h2>
+        <form method="POST" action="{% url 'add_customer' %}">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="contact_number">Contact Number:</label>
+            <input type="text" id="contact_number" name="contact_number" required>
+
+            <button type="submit">Add Customer</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

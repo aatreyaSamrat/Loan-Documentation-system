@@ -1,0 +1,75 @@
+/* Container for the form */
+.container {
+    margin: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+/* Form heading */
+.container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+}
+
+/* Textarea */
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Submit button */
+form .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Form feedback messages */
+form .errorlist {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+form .nonfield {
+    color: red;
+    margin-bottom: 10px;
+}

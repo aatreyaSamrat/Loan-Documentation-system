@@ -1,0 +1,30 @@
+{% extends 'loans/base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles_viewcusto.css' %}">
+
+<h2>View Customers</h2>
+<div class="customer-table-container">
+    <table class="customer-table">
+        <thead>
+            <tr>
+                <!-- <th>Account Number</th> -->
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <!-- <td>{{ customer.account_number }}</td> -->
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.contact_number }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

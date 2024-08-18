@@ -1,0 +1,35 @@
+{% extends "loans/base.html" %}
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles_loanlist.css' %}">
+</head>
+
+<div class="container">
+    <h2>Loans</h2>
+<table>
+    <tr>
+        <th>Customer</th>
+        <th>Loan Type</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Relationship Manager</th>
+        <th>Actions</th>
+    </tr>
+    {% for loan in loans %}
+    <tr>
+        <td>{{ loan.customer.name }}</td>
+        <td>{{ loan.loan_type }}</td>
+        <td>{{ loan.amount }}</td>
+        <td>{{ loan.status }}</td>
+        <td>{{ loan.relationship_manager.username }}</td>
+        <td>
+            {% if perms.loans.change_loan %}
+                <a href="{% url 'loan_edit' loan.pk %}">Edit</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
